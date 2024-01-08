@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Ongoïba BLE</string>
+    <string name="scan_ended">Fin du scan</string>
+    <string name="not_compatible">Non compatible</string>
+    <string name="connected_to">connecté à %s</string>
+    <string name="toogle">Changer l\'état</string>
+    <string name="sos">SOS</string>
+    <string name="not_connected">Pas connecté</string>
+    <string name="uuid_not_found">UUID non trouvé</string>
+    <string name="scan_device">Scanner les périphériques</string>
+    <string name="command_by_internet">Commander via internet</string>
+    <string name="enable_ble_notifications">Activation notifications</string>
+</resources>
