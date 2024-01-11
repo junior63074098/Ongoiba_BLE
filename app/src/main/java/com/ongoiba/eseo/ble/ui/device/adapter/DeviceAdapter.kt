@@ -1,10 +1,13 @@
-package com.ongoiba.eseo.ble
+package com.ongoiba.eseo.ble.ui.device.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.ongoiba.eseo.ble.ui.device.Device
+import com.ongoiba.eseo.ble.R
+
 class DeviceAdapter(private val deviceList: ArrayList<Device>, private val onClick: ((selectedDevice: Device) -> Unit)? = null) : RecyclerView.Adapter<DeviceAdapter.ViewHolder>() {
 
     // Comment s'affiche ma vue

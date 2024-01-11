@@ -1,10 +1,9 @@
-package com.ongoiba.eseo.ble
+package com.ongoiba.eseo.ble.ui.scan
 
 
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.bluetooth.BluetoothAdapter
-import android.bluetooth.BluetoothClass
 import android.bluetooth.BluetoothGatt
 import android.bluetooth.BluetoothGattCharacteristic
 import android.bluetooth.BluetoothGattService
@@ -25,7 +24,6 @@ import android.os.Handler
 import android.provider.Settings
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -33,6 +31,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ongoiba.eseo.ble.ui.device.data.BluetoothLEManager
+import com.ongoiba.eseo.ble.R
+import com.ongoiba.eseo.ble.ui.device.Device
+import com.ongoiba.eseo.ble.ui.device.adapter.DeviceAdapter
 
 const val PERMISSION_REQUEST_LOCATION = 9999
 const val REQUEST_ENABLE_BLE = 9997
@@ -286,7 +288,7 @@ class ScanActivity : AppCompatActivity() {
 
                             // À IMPLÉMENTER
                             // Vous devez appeler la méthode qui active les notifications BLE
-                             enableListenBleNotify()
+                            enableListenBleNotify()
 
                             // On change la vue « pour être en mode connecté »
                             setUiMode(true)
@@ -297,18 +299,20 @@ class ScanActivity : AppCompatActivity() {
                             // À IMPLÉMENTER EN FONCTION DE CE QUE NOUS AVONS DIT ENSEMBLE
                         }
                     },
-                    onNotify = { runOnUiThread {
-                        // VOUS DEVEZ APPELER ICI LA MÉTHODE QUI VA GÉRER LE CHANGEMENT D'ÉTAT DE LA LED DANS L'INTERFACE
-                        // Si it (BluetoothGattCharacteristic) est pour l'UUID CHARACTERISTIC_NOTIFY_STATE
-                        // Alors vous devez appeler la méthode qui va gérer le changement d'état de la LED
-                        if(it.getUuid() == BluetoothLEManager.CHARACTERISTIC_NOTIFY_STATE) {
-                            // À IMPLÉMENTER
-                        } else if (it.getUuid() == BluetoothLEManager.CHARACTERISTIC_GET_COUNT) {
-                            // À IMPLÉMENTER
-                        } else if (it.getUuid() == BluetoothLEManager.CHARACTERISTIC_GET_WIFI_SCAN) {
-                            // À IMPLÉMENTER
+                    onNotify = {
+                        runOnUiThread {
+                            // VOUS DEVEZ APPELER ICI LA MÉTHODE QUI VA GÉRER LE CHANGEMENT D'ÉTAT DE LA LED DANS L'INTERFACE
+                            // Si it (BluetoothGattCharacteristic) est pour l'UUID CHARACTERISTIC_NOTIFY_STATE
+                            // Alors vous devez appeler la méthode qui va gérer le changement d'état de la LED
+                            if (it.getUuid() == BluetoothLEManager.CHARACTERISTIC_NOTIFY_STATE) {
+                                // À IMPLÉMENTER
+                            } else if (it.getUuid() == BluetoothLEManager.CHARACTERISTIC_GET_COUNT) {
+                                // À IMPLÉMENTER
+                            } else if (it.getUuid() == BluetoothLEManager.CHARACTERISTIC_GET_WIFI_SCAN) {
+                                // À IMPLÉMENTER
+                            }
                         }
-                    } },
+                    },
                     onDisconnect = { runOnUiThread { disconnectFromCurrentDevice() } })
             )
         }

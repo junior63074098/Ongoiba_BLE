@@ -1,4 +1,4 @@
-package com.ongoiba.eseo.ble
+package com.ongoiba.eseo.ble.ui.localPreferences
 
 import android.content.Context
 import android.content.SharedPreferences

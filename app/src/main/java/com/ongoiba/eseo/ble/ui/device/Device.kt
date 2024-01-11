@@ -1,4 +1,4 @@
-package com.ongoiba.eseo.ble
+package com.ongoiba.eseo.ble.ui.device
 
 import android.bluetooth.BluetoothDevice
 

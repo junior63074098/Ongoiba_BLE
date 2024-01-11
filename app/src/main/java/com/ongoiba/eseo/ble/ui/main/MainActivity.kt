@@ -1,10 +1,11 @@
-package com.ongoiba.eseo.ble
+package com.ongoiba.eseo.ble.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
+import com.ongoiba.eseo.ble.R
+import com.ongoiba.eseo.ble.ui.scan.ScanActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

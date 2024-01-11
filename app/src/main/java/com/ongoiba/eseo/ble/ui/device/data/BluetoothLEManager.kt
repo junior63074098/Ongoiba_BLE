@@ -1,4 +1,4 @@
-package com.ongoiba.eseo.ble
+package com.ongoiba.eseo.ble.ui.device.data
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice

@@ -24,13 +24,13 @@
         android:theme="@style/Theme.OngoïbaBLE"
         tools:targetApi="31">
         <activity
-            android:name=".RemoteActivity"
+            android:name=".ui.remote.RemoteActivity"
             android:exported="false" />
         <activity
-            android:name=".ScanActivity"
+            android:name=".ui.scan.ScanActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
